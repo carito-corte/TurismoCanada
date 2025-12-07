@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto </title>
+  <link rel="stylesheet" href="css/styles.css">
+  
+</head>
+
+<body>
+  <!-- Encabezado y menú de navegación -->
+  <header>
+    <nav aria-label="Menú principal">
+  <a href="index.html" class="logo">🍁 Canadá</a>
+  <ul>
+    <li><a data-es="Inicio" data-en="Home" href="index.html">Inicio</a></li>
+    <li><a data-es="Destinos" data-en="Destinations" href="destinos.html">Destinos</a></li>
+    <li><a data-es="Cultura y Eventos" data-en="Culture & Events" href="cultura.html">Cultura y Eventos</a></li>
+    <li><a data-es="Gastronomía" data-en="Gastronomy" href="gastronomia.html">Gastronomía</a></li>
+    <li><a data-es="Contacto" data-en="Contact" href="contacto.html">Contacto</a></li>
+     <!-- BOTÓN DE IDIOMA -->
+  <button id="btn-lang" class="btn-lang">EN</button>
+  </ul>
+    </nav>
+  </header>
+
+  <main>
+  <h2 id="welcome-msg"
+      data-es="¡Gracias por visitarnos! Escríbenos y te responderemos pronto."
+      data-en="Thank you for visiting! Write to us and we’ll get back to you soon.">
+      ¡Gracias por visitarnos! Escríbenos y te responderemos pronto.
+  </h2>
+   <section class="hero">
+  <div class="overlay">
+    <h1 data-es="Ponte en contacto con nosotros" data-en="Get in touch with us">Ponte en contacto con nosotros</h1>
+    <p data-es="Si deseas más información sobre Canadá o colaborar con nuestro proyecto, completa el siguiente formulario."
+    data-en="If you would like more information about Canada or would like to collaborate with our project, please complete the following form.">
+    Si deseas más información sobre Canadá o colaborar con nuestro proyecto, completa el siguiente formulario.</p>
+  </div>
+</section>
+
+<div>
+  <form class="formulario">
+      <label for="nombre" data-es="Nombre:" data-en="Name:">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <label for="apellido" data-en="Your last name" data-es="Apellido:">Apellido:</label>
+      <input type="text" id="apellido" name="apellido" required>
+
+      <label for="telefono" data-es="Teléfono:" data-en="Phone:">Teléfono:</label>
+      <input type="tel" id="telefono" name="telefono" placeholder="+57 300 000 0000" required>
+
+      <label for="servicio" data-es="Servicio que deseas contratar:" data-en="Service you wish to purchase:">Servicio que deseas contratar:</label>
+      <select id="servicio" name="servicio" required>
+        <option value="" data-es="Selecciona un servicio" data-en="Select a service">Selecciona un servicio</option>
+        <option value="tour" data-es="Tour guiado por ciudades" data-en="Guided city tour">Tour guiado por ciudades</option>
+        <option value="aventura" data-es="Paquete de aventura natural" data-en="Nature adventure package">Paquete de aventura natural</option>
+        <option value="gastronomia" data-es="Experiencia gastronómica" data-en="Culinary experience">Experiencia gastronómica</option>
+        <option value="personalizado" data-es="Viaje personalizado" data-en="Personalized trip">Viaje personalizado</option>
+      </select>
+
+      <label for="email" data-es="Correo electrónico:" data-en="Email:">Correo electrónico:</label>
+      <input type="email" id="email" name="email" placeholder="tu@correo.com">
+
+      <label for="mensaje" data-es="Mensaje:" data-en="Message:">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..." data-es="Escribe tu mensaje aquí..." data-en="Write your message here..."></textarea>      
+      <button type="submit" data-es="Enviar" data-en="Send">Enviar</button>
+    </form>
+    <p id="confirmacion" class="confirmacion" style="display:none;"
+      data-es="✅ ¡Gracias! Tu mensaje ha sido enviado correctamente. Nos pondremos en contacto contigo pronto."
+      data-en="✅ Thank you! Your message has been sent successfully. We will contact you soon.">
+      ✅ ¡Gracias! Tu mensaje ha sido enviado correctamente. Nos pondremos en contacto contigo pronto.
+    </p>
+    
+</div>
+
+  </main>
+
+  <script src="slider.js"></script>
+  <!-- Pie de página -->
+  <footer>
+    <p data-es="© 2025 Turismo en Canadá | Sitio educativo"
+      data-en="© 2025 Tourism in Canada | Educational site">
+      © 2025 Turismo en Canadá | Sitio educativo
+</p>
+  </footer>
+  <script>
+  const btn = document.getElementById("btn-lang");
+  let idioma = "es"; // idioma inicial
+
+  btn.addEventListener("click", () => {
+    idioma = idioma === "es" ? "en" : "es";
+    btn.textContent = idioma === "es" ? "EN" : "ES";
+
+    document.querySelectorAll("[data-es]").forEach(el => {
+      el.textContent = el.getAttribute(`data-${idioma}`);
+    });
+  });
+</script>
+
+</body>
+</html>

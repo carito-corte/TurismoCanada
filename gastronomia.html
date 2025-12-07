@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gastronomía Canadiense</title>
+  <link rel="stylesheet" href="css/styles2.css">
+</head>
+<body>
+  <!-- Encabezado y menú de navegación -->
+  <header>
+    <nav aria-label="Menú principal">
+  <a href="index.html" class="logo">🍁 Canadá</a>
+  <ul>
+    <li><a data-es="Inicio" data-en="Home" href="index.html">Inicio</a></li>
+    <li><a data-es="Destinos" data-en="Destinations" href="destinos.html">Destinos</a></li>
+    <li><a data-es="Cultura y Eventos" data-en="Culture & Events" href="cultura.html">Cultura y Eventos</a></li>
+    <li><a data-es="Gastronomía" data-en="Gastronomy" href="gastronomia.html">Gastronomía</a></li>
+    <li><a data-es="Contacto" data-en="Contact" href="contacto.html">Contacto</a></li>
+     <!-- BOTÓN DE IDIOMA -->
+  <button id="btn-lang" class="btn-lang">EN</button>
+  </ul>
+    </nav>
+  </header>
+
+  <!-- Contenido principal -->
+  <main>
+   <section class="hero">
+  <div class="overlay">
+    <h1 data-es="Gastronomía Canadiense" data-en="Canadian Cuisine">Gastronomía Canadiense </h1>
+    <p data-es="La gastronomía canadiense combina influencias francesas, británicas e indígenas."
+    data-en="Canadian cuisine combines French, British, and Indigenous influences.">
+    La gastronomía canadiense combina influencias francesas, británicas e indígenas.</p>
+  </div>
+</section>
+
+<section class="intro">
+      <h2 class="text-center" data-es="Gastronomía" data-en="Gastronomy">Gastronomía</h2>
+      <p data-es="Es un reflejo de su diversidad multicultural, con influencias indígenas, británicas, francesas y de otras migraciones. Algunos platos icónicos incluyen el poutine (papas fritas con queso y salsa), el jarabe de arce, el tourtière (pastel de carne) y los beaver tails (masa frita con coberturas dulces). También destacan el smoked meat de Montreal, los bagels de Montreal y el bannock (pan plano)."
+      data-en="It reflects its multicultural diversity, with influences from indigenous peoples, the British, the French, and other migrants. Some iconic dishes include poutine (french fries with cheese and gravy), maple syrup, tourtière (meat pie), and beaver tails (fried dough with sweet toppings). Other notable dishes include Montreal smoked meat, Montreal bagels, and bannock (flatbread).">
+      Es un reflejo de su diversidad multicultural, con influencias indígenas, británicas, francesas y de otras migraciones. Algunos platos icónicos incluyen el poutine (papas fritas con queso y salsa), el jarabe de arce, el tourtière (pastel de carne) y los beaver tails (masa frita con coberturas dulces). También destacan el smoked meat de Montreal, los bagels de Montreal y el bannock (pan plano). </p>
+    </section>
+
+    <div class="cards">
+    <section class="PaltosYBebidas">
+      <h3 data-es="Platos y bebidas representativos" data-en="Representative dishes and drinks">Platos y bebidas representativos</h3>
+      <div class="cards">
+        <article>
+          <img src="Imagenes/Poutine-2.jpg" alt="Poutine">
+          <h3>Poutine</h3>
+          <p data-es="Patatas fritas cubiertas de queso en grano (curds) y salsa de carne. " 
+          data-en="French fries topped with cheese curds and gravy. ">
+          Patatas fritas cubiertas de queso en grano (curds) y salsa de carne. </p>
+        </article>
+        <article>
+          <img src="Imagenes/Jarabe de Arce.jpg" alt="Jarabe de Arce">
+          <h3 data-es="Jarabe de arce" data-en="Maple syrup">Jarabe de arce</h3>
+          <p data-es="Extraído de la savia del arce, es un ingrediente fundamental en muchos postres y platos." 
+          data-en="Extracted from maple sap, it is a key ingredient in many desserts and dishes."> 
+          Extraído de la savia del arce, es un ingrediente fundamental en muchos postres y platos. </p>
+        </article>
+        <article>
+          <img src="Imagenes/BeaverTails.jpg" alt="BeaverTails">
+          <h3>BeaverTails</h3>
+          <p data-es="Una masa frita, alargada y plana, cubierta con coberturas dulces como azúcar, canela, chocolate o frutas."
+          data-en="A fried, elongated, flat dough covered with sweet toppings such as sugar, cinnamon, chocolate, or fruit.">
+          Una masa frita, alargada y plana, cubierta con coberturas dulces como azúcar, canela, chocolate o frutas. </p>
+        </article>
+      </div>
+    </section>
+  </div>
+  </main>
+<script src="slider.js"></script>
+  <!-- Pie de página -->
+  <footer>
+    <p data-es="© 2025 Turismo en Canadá | Sitio educativo"
+      data-en="© 2025 Tourism in Canada | Educational site">
+      © 2025 Turismo en Canadá | Sitio educativo
+</p>
+  </footer>
+  <script>
+  const btn = document.getElementById("btn-lang");
+  let idioma = "es"; // idioma inicial
+
+  btn.addEventListener("click", () => {
+    idioma = idioma === "es" ? "en" : "es";
+    btn.textContent = idioma === "es" ? "EN" : "ES";
+
+    document.querySelectorAll("[data-es]").forEach(el => {
+      el.textContent = el.getAttribute(`data-${idioma}`);
+    });
+  });
+</script>
+</body>
+</html>

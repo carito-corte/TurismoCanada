@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página en Construcción</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .mensaje {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 2rem;
+      border-radius: 10px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      background: #b22222;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="mensaje">
+    <h1 data-es="🚧 Página en Construcción 🚧" data-en="🚧 Page Under Construction 🚧">🚧 Página en Construcción 🚧</h1>
+    <p data-es="Estamos trabajando para traerte más contenido sobre Canadá. ¡Muy pronto estará disponible!" 
+    data-en="We are working on bringing you more content about Canada. It will be available very soon!">
+    Estamos trabajando para traerte más contenido sobre Canadá. ¡Muy pronto estará disponible!</p>
+    <a href="index.html" class="btn">Volver al Inicio</a>
+  </div>
+</body>
+<script src="slider.js"></script>
+  <!-- Pie de página -->
+  </footer>
+  <script>
+  const btn = document.getElementById("btn-lang");
+  let idioma = "es"; // idioma inicial
+
+  btn.addEventListener("click", () => {
+    idioma = idioma === "es" ? "en" : "es";
+    btn.textContent = idioma === "es" ? "EN" : "ES";
+
+    document.querySelectorAll("[data-es]").forEach(el => {
+      el.textContent = el.getAttribute(`data-${idioma}`);
+    });
+  });
+</script>
+</html>

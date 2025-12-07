@@ -1,0 +1,213 @@
+/* Estilos base y accesibilidad */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+a {
+  color: #b22222; /* Rojo arce */
+  text-decoration: none;
+}
+
+a:focus, a:hover {
+  text-decoration: underline;
+  outline: 2px solid #000;
+}
+
+header {
+  background: #fff;
+  border-bottom: 2px solid #ccc;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+
+.hero {
+  position: relative;
+  height: 80vh; /* ocupa 80% del alto de la pantalla */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  background: url('../Imagenes/Canada.jpg') no-repeat center/cover;
+}
+
+
+/* Oscurecer imágenes para que el texto sea legible */
+.overlay {
+  background: rgba(0, 0, 0, 0.5); /* oscurece un poco la imagen */
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+/* Estilos generales del botón */
+.btn {
+  display: inline-block;
+  background-color: #c1121f; /* rojo bandera de Canadá */
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #780000;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.cards img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Centrado de texto en secciones */
+.text-center {
+  text-align: center;
+}
+
+/* Contenedor de botones */
+.btn-container {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+/* ===== MEDIA QUERIES ===== */
+
+/* Tablets (pantallas medianas) */
+@media (max-width: 992px) {
+  header, main, footer {
+    padding: 15px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .intro p {
+    font-size: 1rem;
+  }
+}
+
+/* Celulares (pantallas pequeñas) */
+@media (max-width: 600px) {
+  h1, h2 {
+    font-size: 1.5rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .gallery, .destinos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer {
+    text-align: center;
+  }
+}
+/* ===== FLEXBOX ===== */
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+}
+
+.gallery, .destinos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.formulario {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+  gap: 10px;
+}
+
+.formulario input,
+.formulario textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.formulario button {
+  background-color: #b30000;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
+
+  .platos {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
